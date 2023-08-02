@@ -3,7 +3,12 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px 0 20px;
-  box-shadow: 0 0 5px 5px lightgray;
+  background-color: #1876d2;
+}
+
+.Logo {
+  color: white;
+  text-decoration: none;
 }
 
 .Home {
@@ -43,4 +48,21 @@ h3 {
   border-radius: 50%;
   text-decoration: none;
   color: black;
+}
+
+#button {
+  margin-top: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+#search {
+  color: white;
 }

@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [show, setShow] = useState(10);
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('tags=front_page');
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
   const handleChange = (e) => {
     let value = e.target.value;
@@ -17,19 +17,24 @@ function App() {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-
     setShow(10);
-    if (document.querySelector('input').value === '') {
-      setSearch(`tags=front_page`);
+    let inputValue = `query=${document.querySelector('#input').value}`;
+    let navPlacement = document.querySelector('#input').value;
+    if (document.querySelector('#input').value === '') {
+      setSearch(inputValue);
       navigate(`/`);
       setShow(10);
     }
-
-    document.querySelector('input').value = '';
+    setSearch(inputValue);
+    navigate(`/?${navPlacement}`);
   };
   let handleButtonClick = () => {
     setShow(show + 10);
   };
+
+  useEffect(() => {
+    navigate('/');
+  }, []);
 
   return (
     <div className="App">
