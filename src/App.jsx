@@ -7,8 +7,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [show, setShow] = useState(10);
-  const [n, setN] = useState(1);
-  const page = `&page=${n}`;
+  const [page, setPage] = useState(1);
   const [search, setSearch] = useState('tags=front_page');
   const navigate = useNavigate();
   const handleChange = (e) => {
@@ -54,6 +53,7 @@ function App() {
                 handleButtonClick={handleButtonClick}
                 page={page}
                 show={show}
+                setPage={setPage}
               />
             }
           />
